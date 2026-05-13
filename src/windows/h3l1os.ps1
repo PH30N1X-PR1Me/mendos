@@ -1,5 +1,5 @@
 # ============================================================================
-#  FRNTZN H3L1OS v1.0.0  -  Cross-Platform Self-Service IT Diagnostic Tool
+#  MendOS v1.0.0  -  Cross-Platform Self-Service IT Diagnostic Tool
 #  Windows entry point
 # ============================================================================
 #  Repository: https://github.com/PH30N1X-PR1Me/frntzn-h3l1os
@@ -41,8 +41,8 @@
 # Each new release: bump the version tag in $script:ScriptUrl AND publish a
 # new GitHub release with that tag. Cache headers on raw.githubusercontent.com
 # are ~5min so propagation is fast.
-$script:ScriptUrl     = 'https://raw.githubusercontent.com/PH30N1X-PR1Me/frntzn-h3l1os/v1.0.0/src/windows/h3l1os.ps1'
-$script:Version       = '1.0.0'
+$script:ScriptUrl     = 'https://raw.githubusercontent.com/PH30N1X-PR1Me/frntzn-h3l1os/v1.0.1/src/windows/h3l1os.ps1'
+$script:Version       = '1.0.1'
 $script:UserAgent     = "FRNTZN-H3L1OS/$script:Version (Windows; PowerShell $($PSVersionTable.PSVersion))"
 $script:LicenseUrl    = 'https://mendos.heliosprima.com/v1/license/check'
 $script:VersionUrl    = 'https://mendos.heliosprima.com/v1/version'
@@ -114,7 +114,7 @@ function Get-DefaultConfig {
         version    = '1.0.0'
         client     = @{
             id              = 'default'
-            name            = 'FRNTZN H3L1OS'
+            name            = 'MendOS'
             primaryColor    = '#0E639C'
             supportContact  = $null
             ticketSystemUrl = $null
@@ -183,8 +183,8 @@ $script:Config = Get-Config
 # back to English. Strings live in en.json/es.json/... but inlined here for
 # irm | iex self-containment.
 $script:Strings = @{
-    'app.name'                    = 'FRNTZN H3L1OS'
-    'app.subtitle.admin'          = 'Admin mode - click Fix, search, or pick an issue below'
+    'app.name'                    = 'MendOS'
+    'app.subtitle.admin'          = 'MEND your Operating System'
     'app.subtitle.audit'          = 'AUDIT MODE - no changes will be made'
     'btn.refresh'                 = 'Refresh'
     'btn.exit'                    = 'Exit'
@@ -1239,7 +1239,7 @@ function Export-DiagnosticBundle {
     $cs = Get-CimInstance Win32_ComputerSystem
     $cpu = Get-CimInstance Win32_Processor | Select-Object -First 1
     $summary = @"
-FRNTZN H3L1OS Diagnostic Bundle
+MendOS Diagnostic Bundle
 Generated: $(Get-Date -Format 'o')
 Tool version: $script:Version
 Tier: $script:Tier
@@ -1314,7 +1314,7 @@ function Invoke-Escalation {
     $body = @"
 Hi IT,
 
-I need help with my computer. FRNTZN H3L1OS tried to fix it but couldn't resolve the issue.
+I need help with my computer. MendOS tried to fix it but couldn't resolve the issue.
 
 A diagnostic bundle has been saved at:
 $bundlePath
@@ -1338,7 +1338,7 @@ Thanks
 [xml]$xaml = @'
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="FRNTZN H3L1OS"
+        Title="MendOS"
         Height="780" Width="680"
         WindowStartupLocation="CenterScreen"
         Background="#1E1E1E"
@@ -1359,7 +1359,7 @@ Thanks
         <ColumnDefinition Width="Auto"/>
       </Grid.ColumnDefinitions>
       <StackPanel VerticalAlignment="Center">
-        <TextBlock x:Name="txtTitle" Text="FRNTZN H3L1OS" Foreground="White" FontSize="24" FontWeight="Bold"/>
+        <TextBlock x:Name="txtTitle" FontSize="24" FontWeight="Bold" Foreground="White"><Run x:Name="txtTitleBold" Text="Mend"/><Run x:Name="txtTitleLight" Text="OS" FontWeight="Light" Foreground="#A0A0A0"/></TextBlock>
         <TextBlock x:Name="txtSubtitle" Text="" Foreground="#A0A0A0" FontSize="12" Margin="0,2,0,0"/>
         <TextBlock x:Name="txtTier" Text="" Foreground="#1ABC9C" FontSize="11" FontWeight="SemiBold" Margin="0,4,0,0"/>
       </StackPanel>
@@ -1487,7 +1487,7 @@ $window = [Windows.Markup.XamlReader]::Load($reader)
 
 # ----- GRAB UI REFERENCES ---------------------------------------------------
 $ui = @{}
-foreach ($n in 'txtTitle','txtSubtitle','txtTier','chkAudit',
+foreach ($n in 'txtTitle','txtTitleBold','txtTitleLight','txtSubtitle','txtTier','chkAudit',
                'txtUptime','dotUptime','btnFixUptime',
                'txtDisk','dotDisk','btnFixDisk',
                'txtRam','dotRam','btnFixRam',
@@ -1501,7 +1501,13 @@ foreach ($n in 'txtTitle','txtSubtitle','txtTier','chkAudit',
 }
 
 # Theme bindings
-$ui.txtTitle.Text = $script:Config.client.name
+if ($script:Config.client.name -eq 'MendOS') {
+    $ui.txtTitleBold.Text  = 'Mend'
+    $ui.txtTitleLight.Text = 'OS'
+} else {
+    $ui.txtTitleBold.Text  = $script:Config.client.name
+    $ui.txtTitleLight.Text = ''
+}
 $ui.txtTier.Text = if ($script:Tier -eq 'Ultimate') { (L 'license.tier_ultimate') } else { (L 'license.tier_light') }
 $ui.txtTier.Foreground = if ($script:Tier -eq 'Ultimate') { 'Gold' } else { '#1ABC9C' }
 $ui.chkAudit.IsChecked = $script:AuditMode

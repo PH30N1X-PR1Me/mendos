@@ -1,9 +1,9 @@
 {
-  "app.name": "FRNTZN H3L1OS",
+  "app.name": "MendOS",
   "app.tagline": "Diagnóstico y Reparación de TI de Autoservicio",
-  "app.subtitle.admin": "Modo administrador - haga clic en Reparar, busque o elija un problema",
+  "app.subtitle.admin": "REPARE su sistema operativo",
   "app.subtitle.audit": "MODO AUDITORÍA - no se realizarán cambios",
-  "app.subtitle.standard": "Haga clic en Reparar, busque o elija un problema",
+  "app.subtitle.standard": "REPARE su sistema operativo",
   "app.tier.light": "Light",
   "app.tier.ultimate": "Ultimate",
 
@@ -51,7 +51,7 @@
   "workflow.step.skipped": "[OMITIDO]",
 
   "escalation.subject": "Solicitud de soporte TI - {0}",
-  "escalation.body.intro": "Hola TI,\n\nNecesito ayuda con mi computadora. FRNTZN H3L1OS intentó repararla pero no pudo resolverlo completamente.",
+  "escalation.body.intro": "Hola TI,\n\nNecesito ayuda con mi computadora. MendOS intentó repararla pero no pudo resolverlo completamente.",
   "escalation.body.bundle": "El paquete de diagnóstico se guardó en:\n{0}\n\nLa ruta también está en el portapapeles.",
   "escalation.body.summary": "Resumen de lo que se intentó:\n{0}",
 

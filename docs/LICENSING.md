@@ -1,6 +1,6 @@
 # Licensing & Tiers
 
-FRNTZN H3L1OS uses a **freemium model**:
+MendOS uses a **freemium model**:
 
 - **Light** — free, MIT-licensed. Everything you need for self-service IT.
 - **Ultimate** — paid, commercial license. Multi-step workflows, localization, MDM-awareness, MSP branding, ITSM integrations.

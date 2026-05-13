@@ -1,4 +1,4 @@
-# Contributing to FRNTZN H3L1OS
+# Contributing to MendOS
 
 Thanks for considering a contribution. This document is short and direct.
 

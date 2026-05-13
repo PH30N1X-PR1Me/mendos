@@ -1,5 +1,5 @@
 // ============================================================================
-//  FRNTZN H3L1OS - Cloudflare Worker (hybrid setup)
+//  MendOS - Cloudflare Worker (hybrid setup)
 //
 //  Hosts on:  mendos.heliosprima.com
 //
@@ -30,7 +30,7 @@ const HASH_FORMAT          = /^[a-f0-9]{8,128}$/;
 // ----- Release pinning ------------------------------------------------------
 // Bump RELEASE_TAG on every new release. The short-URL endpoints (/win, /mac)
 // proxy GitHub raw at this tag, so users always get the version you blessed.
-const RELEASE_TAG     = 'v1.0.0';
+const RELEASE_TAG     = 'v1.0.1';
 const GITHUB_REPO     = 'PH30N1X-PR1Me/frntzn-h3l1os';
 const WINDOWS_RAW_URL = `https://raw.githubusercontent.com/${GITHUB_REPO}/${RELEASE_TAG}/src/windows/h3l1os.ps1`;
 const MAC_RAW_URL     = `https://raw.githubusercontent.com/${GITHUB_REPO}/${RELEASE_TAG}/src/mac/h3l1os.sh`;

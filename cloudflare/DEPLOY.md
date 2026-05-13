@@ -1,4 +1,4 @@
-# FRNTZN H3L1OS - Deploy From Scratch
+# MendOS - Deploy From Scratch
 
 This guide assumes **zero prior experience** with Git, GitHub, Node.js, Cloudflare Workers, or any of it. Every command is shown. Every screen is described. If you follow each step in order, you'll have a working public install one-liner in about an hour.
 
@@ -218,7 +218,7 @@ git add .
 ```
 
 ```bash
-git commit -m "FRNTZN H3L1OS v1.0.0"
+git commit -m "MendOS v1.0.0"
 ```
 
 ```bash
@@ -437,7 +437,7 @@ git push origin v1.0.0
 1. Go to `https://github.com/frantzonj/frntzn-h3l1os/releases` in your browser
 2. Click **Draft a new release** (or "Create a new release")
 3. **Choose a tag:** pick `v1.0.0` from the dropdown
-4. **Release title:** `FRNTZN H3L1OS v1.0.0`
+4. **Release title:** `MendOS v1.0.0`
 5. **Description:** Write a few lines about what it does. Or paste your README intro.
 6. (Optional) Attach SHA-256 hash files — see below
 7. Click **Publish release**
@@ -486,7 +486,7 @@ irm 'https://raw.githubusercontent.com/frantzonj/frntzn-h3l1os/v1.0.0/src/window
 
 A UAC prompt appears asking for admin privileges. Click Yes.
 
-The tool launches in a new PowerShell window. You should see the FRNTZN H3L1OS WPF window with:
+The tool launches in a new PowerShell window. You should see the MendOS WPF window with:
 - "Light tier (free)" badge in the header
 - 7 health-check rows
 - A search box and dropdown picker

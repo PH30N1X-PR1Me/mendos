@@ -1,5 +1,5 @@
 # ============================================================================
-#  Wrangler config for FRNTZN H3L1OS API Worker
+#  Wrangler config for MendOS API Worker
 #
 #  The Worker hosts at  https://mendos.heliosprima.com/*
 #  Scripts stay on GitHub raw - this is API-only.

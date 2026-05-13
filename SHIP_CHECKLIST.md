@@ -1,4 +1,4 @@
-# Ship It Checklist - FRNTZN H3L1OS v1.0.0
+# Ship It Checklist - MendOS v1.0.0
 
 You now have a complete v1.0 product. Here's what's in your hands and what to do next.
 
@@ -75,7 +75,7 @@ Commit the change.
 ### 3. Tag the v1.0.0 release
 
 ```bash
-git tag -a v1.0.0 -m "FRNTZN H3L1OS v1.0.0 - initial release"
+git tag -a v1.0.0 -m "MendOS v1.0.0 - initial release"
 git push origin v1.0.0
 ```
 
@@ -102,7 +102,7 @@ On a Mac:
 
 ### 5. Drop it on Notion
 
-Create a Notion page titled "FRNTZN H3L1OS" with:
+Create a Notion page titled "MendOS" with:
 - The one-liner as a code block
 - A link to your GitHub repo
 - A link to the SECURITY.md doc

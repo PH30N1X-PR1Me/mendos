@@ -1,6 +1,6 @@
 # Security Policy & Transparency
 
-FRNTZN H3L1OS runs with administrator privileges and modifies system state. This document is our commitment to you about what it does and doesn't do.
+MendOS runs with administrator privileges and modifies system state. This document is our commitment to you about what it does and doesn't do.
 
 ## Guarantees
 

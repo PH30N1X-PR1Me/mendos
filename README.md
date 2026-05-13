@@ -1,4 +1,4 @@
-# FRNTZN H3L1OS
+# MendOS
 
 > Self-service IT diagnostic & remediation tool for Windows and macOS.
 > One-line install. Vendor-neutral. Open source.
@@ -12,7 +12,7 @@
 
 ## What it does
 
-FRNTZN H3L1OS is a free, open-source tool that helps non-technical users diagnose and fix common IT problems on their own — DNS issues, audio glitches, Bluetooth pairing, slow performance, browser cache problems, MFA loops, printer offline, and more — without waiting for IT.
+MendOS is a free, open-source tool that helps non-technical users diagnose and fix common IT problems on their own — DNS issues, audio glitches, Bluetooth pairing, slow performance, browser cache problems, MFA loops, printer offline, and more — without waiting for IT.
 
 Built for call centers, BPOs, MSPs, and anyone who runs IT support at scale. Particularly tuned for **low-end hardware** (Celeron N4500-class machines with 4–8 GB RAM) where every gram of optimization matters.
 
@@ -139,6 +139,6 @@ Pull requests welcome. Please read [CONTRIBUTING.md](docs/CONTRIBUTING.md).
 
 ## Why this exists
 
-Most IT support tickets are repetitive — DNS flush, restart audio, clear cache, sign in again. FRNTZN H3L1OS lets people fix those themselves, in seconds, without filing a ticket. IT teams get to focus on the hard stuff. Users get unstuck faster.
+Most IT support tickets are repetitive — DNS flush, restart audio, clear cache, sign in again. MendOS lets people fix those themselves, in seconds, without filing a ticket. IT teams get to focus on the hard stuff. Users get unstuck faster.
 
 Built originally to support Remedy Meds call-center operations. Now generalized.
