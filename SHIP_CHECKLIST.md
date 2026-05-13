@@ -5,7 +5,7 @@ You now have a complete v1.0 product. Here's what's in your hands and what to do
 ## What's in the box
 
 ```
-frntzn-h3l1os/
+mendos/
 ├── README.md                         # Public-facing README
 ├── LICENSE                           # MIT for Light tier
 ├── config/
@@ -58,14 +58,14 @@ Identity (Okta MFA, account locked), Audio (no output, mic, Logitech double-mute
 
 ### 1. Create the GitHub repo
 
-- Make a public repo named `frntzn-h3l1os` (or your chosen name) on GitHub.
-- Upload the entire `frntzn-h3l1os/` folder contents.
+- Make a public repo named `mendos` (or your chosen name) on GitHub.
+- Upload the entire `mendos/` folder contents.
 - Make `main` your default branch.
 - Enable branch protection: require PRs, require 1 review.
 
 ### 2. Update the URLs in the script
 
-Find and replace `PH30N1X-PR1Me` in:
+Find and replace `fr4ntz0n` in:
 - `src/windows/h3l1os.ps1` line 32 (`$script:ScriptUrl`)
 - `src/mac/h3l1os.sh` line 19 (`H3L1OS_SCRIPT_URL`)
 - `README.md` (both quick-start lines)
@@ -92,12 +92,12 @@ Upload both `.sha256` files to the release.
 
 On a Windows machine:
 ```powershell
-irm 'https://raw.githubusercontent.com/PH30N1X-PR1Me/frntzn-h3l1os/main/src/windows/h3l1os.ps1' | iex
+irm 'https://raw.githubusercontent.com/heliosprima/mendos/main/src/windows/h3l1os.ps1' | iex
 ```
 
 On a Mac:
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PH30N1X-PR1Me/frntzn-h3l1os/main/src/mac/h3l1os.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/heliosprima/mendos/main/src/mac/h3l1os.sh)"
 ```
 
 ### 5. Drop it on Notion

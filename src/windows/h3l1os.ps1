@@ -2,7 +2,7 @@
 #  MendOS v1.0.0  -  Cross-Platform Self-Service IT Diagnostic Tool
 #  Windows entry point
 # ============================================================================
-#  Repository: https://github.com/PH30N1X-PR1Me/frntzn-h3l1os
+#  Repository: https://github.com/heliosprima/mendos
 #  License   : MIT (free Light tier) + commercial Ultimate tier
 #
 #  Architecture (read this before editing):
@@ -41,9 +41,9 @@
 # Each new release: bump the version tag in $script:ScriptUrl AND publish a
 # new GitHub release with that tag. Cache headers on raw.githubusercontent.com
 # are ~5min so propagation is fast.
-$script:ScriptUrl     = 'https://raw.githubusercontent.com/PH30N1X-PR1Me/frntzn-h3l1os/v1.0.1/src/windows/h3l1os.ps1'
+$script:ScriptUrl     = 'https://raw.githubusercontent.com/heliosprima/mendos/v1.0.1/src/windows/h3l1os.ps1'
 $script:Version       = '1.0.1'
-$script:UserAgent     = "FRNTZN-H3L1OS/$script:Version (Windows; PowerShell $($PSVersionTable.PSVersion))"
+$script:UserAgent     = "mendos/$script:Version (Windows; PowerShell $($PSVersionTable.PSVersion))"
 $script:LicenseUrl    = 'https://mendos.heliosprima.com/v1/license/check'
 $script:VersionUrl    = 'https://mendos.heliosprima.com/v1/version'
 $script:TelemetryUrl  = 'https://mendos.heliosprima.com/v1/telemetry/event'

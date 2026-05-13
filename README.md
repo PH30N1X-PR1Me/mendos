@@ -30,7 +30,7 @@ MendOS is the playbook in a window with buttons. Paste one line, a scanner runs,
 
 Mend is what you do to something that's broken. OS is your operating system. The logo is bionic: **Mend** in bold, OS in lighter weight. Like two strands of a helix that hold the structure together. When one strand breaks, MendOS finds the broken part and stitches it back.
 
-Pronounced *mend-OH-S*. Built by [FR4NTZ0N](https://github.com/PH30N1X-PR1Me). Shipped under [Helios Prima](https://heliosprima.com).
+Pronounced *mend-OH-S*. Built by [FR4NTZ0N](https://github.com/fr4ntz0n). Shipped under [Helios Prima](https://heliosprima.com).
 
 ## Who it's for
 
@@ -143,7 +143,7 @@ This tool runs as administrator. That means it can do real damage if you don't t
 
 **Open source.** Every line of every script that runs on your machine is in this repo, pinned to a Git commit tag. No minified blobs. No obfuscated functions. No binaries fetched at runtime that you can't inspect.
 
-**SHA-256 hashes** for every release are on the [Releases](https://github.com/PH30N1X-PR1Me/mendos/releases) page. Verify before you run.
+**SHA-256 hashes** for every release are on the [Releases](https://github.com/heliosprima/mendos/releases) page. Verify before you run.
 
 **AMSI stays on.** Windows Defender's anti-malware scanner is never disabled. Every AMSI bypass technique on the internet is a defense-evasion pattern with no legitimate use case here. We use zero of them.
 
@@ -175,7 +175,7 @@ Paste it. See what it does. If your computer's been fighting you, this is the to
 
 MIT for the Light tier. See [`docs/LICENSING.md`](docs/LICENSING.md) for how the Ultimate tier gate works and how the freemium model is implemented.
 
-Copyright (c) 2026 [FR4NTZ0N](https://github.com/PH30N1X-PR1Me). A [Helios Prima](https://heliosprima.com) product.
+Copyright (c) 2026 [FR4NTZ0N](https://github.com/fr4ntz0n). A [Helios Prima](https://heliosprima.com) product.
 
 ---
 

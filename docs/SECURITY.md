@@ -36,7 +36,7 @@ Lessons we apply:
 - **Reproducible builds + commit pinning** beat trust-in-vendor. Anyone can verify our releases byte-for-byte against the source commit.
 - **Restricted release branch.** Only repo owners can push to `main`. Signed commits + 2-of-2 review for release tags.
 - **No silent auto-update.** We notify, link to the changelog, and let you decide. CCleaner's update mechanism was the delivery vehicle.
-- **Transparency reports.** Every release we publish: commit SHA, SHA-256 of the released file, changelog. See [`releases/`](https://github.com/PH30N1X-PR1Me/frntzn-h3l1os/releases).
+- **Transparency reports.** Every release we publish: commit SHA, SHA-256 of the released file, changelog. See [`releases/`](https://github.com/heliosprima/mendos/releases).
 
 ## Verification
 

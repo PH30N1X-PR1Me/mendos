@@ -3,7 +3,7 @@
 #  MendOS v1.0.0  -  Cross-Platform Self-Service IT Diagnostic Tool
 #  macOS entry point
 # ============================================================================
-#  Deploy via:  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/PH30N1X-PR1Me/frntzn-h3l1os/v1.0.1/src/mac/h3l1os.sh)"
+#  Deploy via:  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/heliosprima/mendos/v1.0.1/src/mac/h3l1os.sh)"
 #  Mirrors the architecture of the Windows side:
 #    - Three registries (FIXES, PROBLEMS, WORKFLOWS) via arrays/functions
 #    - Same vendor-neutral config.json
@@ -23,7 +23,7 @@ __h3l1os_main() {
     #   - Script lives on GitHub raw (versioned tag URL)
     #   - API endpoints on Cloudflare Worker at mendos.heliosprima.com
     readonly H3L1OS_VERSION="1.0.1"
-    readonly H3L1OS_SCRIPT_URL="https://raw.githubusercontent.com/PH30N1X-PR1Me/frntzn-h3l1os/v1.0.1/src/mac/h3l1os.sh"
+    readonly H3L1OS_SCRIPT_URL="https://raw.githubusercontent.com/heliosprima/mendos/v1.0.1/src/mac/h3l1os.sh"
     readonly H3L1OS_LICENSE_URL="https://mendos.heliosprima.com/v1/license/check"
     readonly H3L1OS_VERSION_URL="https://mendos.heliosprima.com/v1/version"
     readonly H3L1OS_TELEMETRY_URL="https://mendos.heliosprima.com/v1/telemetry/event"

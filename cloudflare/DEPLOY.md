@@ -13,7 +13,7 @@ If something doesn't work, jump to the **Troubleshooting** section at the very b
 - A **domain you own** that's been added to Cloudflare (so Cloudflare is the nameserver for it). If you don't have one yet, you can buy one through Cloudflare itself for ~$10/year — easiest path.
 - A **GitHub account** — sign up at github.com if you don't have one. It's free.
 - About **60 minutes** of uninterrupted time
-- The **frntzn-h3l1os folder** that was built for you — put it somewhere you can find it, like your Desktop
+- The **mendos folder** that was built for you — put it somewhere you can find it, like your Desktop
 
 ---
 
@@ -87,17 +87,17 @@ You're now ready to deploy to Cloudflare.
 
 ### 1.1 — Open the project folder in your terminal
 
-You need to "be in" the frntzn-h3l1os folder when running commands. Here's how:
+You need to "be in" the mendos folder when running commands. Here's how:
 
 **Windows (PowerShell):**
 ```powershell
-cd "$HOME\Desktop\frntzn-h3l1os"
+cd "$HOME\Desktop\mendos"
 ```
-(If you put the folder somewhere else, change the path. Like `cd "C:\Users\YourName\Documents\frntzn-h3l1os"`.)
+(If you put the folder somewhere else, change the path. Like `cd "C:\Users\YourName\Documents\mendos"`.)
 
 **Mac (Terminal):**
 ```bash
-cd ~/Desktop/frntzn-h3l1os
+cd ~/Desktop/mendos
 ```
 
 ### 1.2 — Confirm you're in the right place
@@ -125,7 +125,7 @@ If you see something else (like your Desktop contents), you're not in the right 
 The project files have two placeholders that need to be replaced with your actual info:
 
 - `heliosprima.com` → your domain (e.g. `frntzn.dev` or `myhelpdesk.com`)
-- `PH30N1X-PR1Me` → your GitHub username (e.g. `frantzonj`)
+- `fr4ntz0n` → your GitHub username (e.g. `frantzonj`)
 
 ### 2.1 — Decide on your values
 
@@ -137,7 +137,7 @@ Example:
 
 ### 2.2 — Run the replacement command
 
-**Make sure you're still in the frntzn-h3l1os folder.** Then run:
+**Make sure you're still in the mendos folder.** Then run:
 
 **Windows (PowerShell):**
 ```powershell
@@ -146,7 +146,7 @@ Get-ChildItem -Recurse -Include *.ps1,*.sh,*.js,*.toml,*.json,*.html,*.md |
   ForEach-Object {
     (Get-Content $_.FullName -Raw) `
       -replace 'YOURDOMAIN\.TLD','mycoolsite.dev' `
-      -replace 'PH30N1X-PR1Me','frantzonj' |
+      -replace 'fr4ntz0n','frantzonj' |
       Set-Content $_.FullName -NoNewline
   }
 ```
@@ -157,7 +157,7 @@ Get-ChildItem -Recurse -Include *.ps1,*.sh,*.js,*.toml,*.json,*.html,*.md |
 ```bash
 find . -type f \( -name "*.ps1" -o -name "*.sh" -o -name "*.js" -o -name "*.toml" -o -name "*.json" -o -name "*.html" -o -name "*.md" \) \
   -not -path "./.git/*" \
-  -exec sed -i.bak 's/YOURDOMAIN\.TLD/mycoolsite.dev/g; s/PH30N1X-PR1Me/frantzonj/g' {} \;
+  -exec sed -i.bak 's/YOURDOMAIN\.TLD/mycoolsite.dev/g; s/fr4ntz0n/frantzonj/g' {} \;
 find . -name "*.bak" -delete
 ```
 
@@ -175,7 +175,7 @@ Select-String -Path .\src\windows\h3l1os.ps1 -Pattern 'ScriptUrl' | Select-Objec
 grep "ScriptUrl" src/windows/h3l1os.ps1 | head -1
 ```
 
-You should see your real domain and username. No `heliosprima.com` or `PH30N1X-PR1Me` left.
+You should see your real domain and username. No `heliosprima.com` or `fr4ntz0n` left.
 
 If you see the placeholders, the replacement didn't work — try the command again, making sure you replaced the example values with your real ones.
 
@@ -186,7 +186,7 @@ If you see the placeholders, the replacement didn't work — try the command aga
 ### 3.1 — Create the repo on GitHub
 
 1. Go to https://github.com/new in your browser
-2. **Repository name:** `frntzn-h3l1os`
+2. **Repository name:** `mendos`
 3. **Description:** "Self-service IT diagnostic tool for Windows and macOS" (or whatever you want)
 4. **Public** (must be public so `raw.githubusercontent.com` works)
 5. DO NOT check "Add a README file", "Add .gitignore", or "Choose a license" — we already have those
@@ -207,7 +207,7 @@ git config --global user.name "Your Name"
 
 ### 3.3 — Push the code to GitHub
 
-Still in the `frntzn-h3l1os` folder, run these one at a time:
+Still in the `mendos` folder, run these one at a time:
 
 ```bash
 git init
@@ -226,7 +226,7 @@ git branch -M main
 ```
 
 ```bash
-git remote add origin https://github.com/frantzonj/frntzn-h3l1os.git
+git remote add origin https://github.com/frantzonj/mendos.git
 ```
 
 (Replace `frantzonj` with your actual GitHub username.)
@@ -239,14 +239,14 @@ The last command might pop up a browser asking you to log in to GitHub — do it
 
 ### 3.4 — Verify it's on GitHub
 
-Open `https://github.com/frantzonj/frntzn-h3l1os` in your browser (with your username). You should see all the files. If yes — code is published.
+Open `https://github.com/frantzonj/mendos` in your browser (with your username). You should see all the files. If yes — code is published.
 
 ### 3.5 — Test the raw URL
 
 In your browser, go to:
 
 ```
-https://raw.githubusercontent.com/frantzonj/frntzn-h3l1os/main/src/windows/h3l1os.ps1
+https://raw.githubusercontent.com/frantzonj/mendos/main/src/windows/h3l1os.ps1
 ```
 
 You should see the raw PowerShell code as plain text. If you do, your install URL is working. (We'll create the versioned `v1.0.0` URL in Phase 7.)
@@ -290,7 +290,7 @@ nslookup api.mycoolsite.dev
 cd cloudflare
 ```
 
-(You should now be in `frntzn-h3l1os/cloudflare`.)
+(You should now be in `mendos/cloudflare`.)
 
 ### 5.2 — Create the LICENSES namespace
 
@@ -302,7 +302,7 @@ wrangler kv namespace create LICENSES
 
 The output looks like:
 ```
-🌀 Creating namespace with title "frntzn-h3l1os-api-LICENSES"
+🌀 Creating namespace with title "mendos-api-LICENSES"
 ✨ Success!
 Add the following to your configuration file:
 [[kv_namespaces]]
@@ -376,9 +376,9 @@ wrangler deploy
 You'll see output like:
 ```
 Total Upload: 5.2 KiB / gzip: 2.1 KiB
-Uploaded frntzn-h3l1os-api (1.2 sec)
-Published frntzn-h3l1os-api (0.4 sec)
-  https://frntzn-h3l1os-api.your-account.workers.dev
+Uploaded mendos-api (1.2 sec)
+Published mendos-api (0.4 sec)
+  https://mendos-api.your-account.workers.dev
   api.mycoolsite.dev/v1/*
 Current Deployment ID: ...
 ```
@@ -420,7 +420,7 @@ The install one-liners point at the `v1.0.0` tag, not `main`. This makes the URL
 cd ..
 ```
 
-You should now be in `frntzn-h3l1os` (one level up from `cloudflare`).
+You should now be in `mendos` (one level up from `cloudflare`).
 
 ### 7.2 — Create the tag
 
@@ -434,7 +434,7 @@ git push origin v1.0.0
 
 ### 7.3 — Create a GitHub Release from the tag (optional but recommended)
 
-1. Go to `https://github.com/frantzonj/frntzn-h3l1os/releases` in your browser
+1. Go to `https://github.com/frantzonj/mendos/releases` in your browser
 2. Click **Draft a new release** (or "Create a new release")
 3. **Choose a tag:** pick `v1.0.0` from the dropdown
 4. **Release title:** `MendOS v1.0.0`
@@ -465,7 +465,7 @@ Drag both `.sha256` files into the GitHub Release page (in the "Attach binaries"
 In your browser, go to:
 
 ```
-https://raw.githubusercontent.com/frantzonj/frntzn-h3l1os/v1.0.0/src/windows/h3l1os.ps1
+https://raw.githubusercontent.com/frantzonj/mendos/v1.0.0/src/windows/h3l1os.ps1
 ```
 
 (Use your real username.) You should see the raw PowerShell code. This URL will never change — anyone who runs it three years from now gets the exact same code.
@@ -479,7 +479,7 @@ https://raw.githubusercontent.com/frantzonj/frntzn-h3l1os/v1.0.0/src/windows/h3l
 Open PowerShell (regular, not admin — UAC will prompt automatically). Run:
 
 ```powershell
-irm 'https://raw.githubusercontent.com/frantzonj/frntzn-h3l1os/v1.0.0/src/windows/h3l1os.ps1' | iex
+irm 'https://raw.githubusercontent.com/frantzonj/mendos/v1.0.0/src/windows/h3l1os.ps1' | iex
 ```
 
 (Replace `frantzonj` with your username.)
@@ -499,7 +499,7 @@ If you see all that — **you've shipped a real product.**
 Open Terminal. Run:
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/frantzonj/frntzn-h3l1os/v1.0.0/src/mac/h3l1os.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/frantzonj/mendos/v1.0.0/src/mac/h3l1os.sh)"
 ```
 
 The bash menu launches. You'll see options to run a health scan, pick an issue, etc.
@@ -534,13 +534,13 @@ wrangler kv key put --binding=LICENSES "FRNTZN-TEST-ULTI-MATE" "{\"tier\":\"Ulti
 **Windows (PowerShell):**
 ```powershell
 $env:FRNTZN_KEY = 'FRNTZN-TEST-ULTI-MATE'
-irm 'https://raw.githubusercontent.com/frantzonj/frntzn-h3l1os/v1.0.0/src/windows/h3l1os.ps1' | iex
+irm 'https://raw.githubusercontent.com/frantzonj/mendos/v1.0.0/src/windows/h3l1os.ps1' | iex
 ```
 
 **Mac (Terminal):**
 ```bash
 export FRNTZN_KEY='FRNTZN-TEST-ULTI-MATE'
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/frantzonj/frntzn-h3l1os/v1.0.0/src/mac/h3l1os.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/frantzonj/mendos/v1.0.0/src/mac/h3l1os.sh)"
 ```
 
 The header should now say "Ultimate tier" in gold instead of "Light tier" in teal. Multi-step workflows like "Boost Low-End System" should run instead of showing the "Ultimate tier required" dialog.
@@ -561,8 +561,8 @@ You should see your key's data with `"machines":["abc123..."]` — that's your m
 
 You now have:
 
-- ✅ Code on GitHub at `https://github.com/yourusername/frntzn-h3l1os`
-- ✅ Versioned install URL at `https://raw.githubusercontent.com/yourusername/frntzn-h3l1os/v1.0.0/src/...`
+- ✅ Code on GitHub at `https://github.com/yourusername/mendos`
+- ✅ Versioned install URL at `https://raw.githubusercontent.com/yourusername/mendos/v1.0.0/src/...`
 - ✅ Worker live at `https://api.yourdomain/v1/*`
 - ✅ License gate with machine binding
 - ✅ Opt-in telemetry sink
@@ -686,7 +686,7 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
 ### "Permission denied (publickey)" when running `git push`
 GitHub auth issue. Easiest fix: use HTTPS (which we do) and let Git pop up the browser for OAuth. If your URL is `git@github.com:...`, change to `https://github.com/...`:
 ```bash
-git remote set-url origin https://github.com/frantzonj/frntzn-h3l1os.git
+git remote set-url origin https://github.com/frantzonj/mendos.git
 ```
 
 ### `wrangler deploy` succeeds but `https://api.mycoolsite.dev/v1/health` returns 404
@@ -703,7 +703,7 @@ You didn't paste the real IDs into `wrangler.toml`. Re-do Phase 5.4.
 ### When stuck on any other issue
 1. Read the error message carefully — it usually says what's wrong
 2. Search the exact error message in Google
-3. Check Cloudflare Dashboard → Workers & Pages → frntzn-h3l1os-api → Logs (live tail) — you'll see what's actually happening when you hit the API
+3. Check Cloudflare Dashboard → Workers & Pages → mendos-api → Logs (live tail) — you'll see what's actually happening when you hit the API
 
 ---
 

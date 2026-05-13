@@ -14,7 +14,7 @@
 #    5. wrangler deploy
 # ============================================================================
 
-name = "frntzn-h3l1os-api"
+name = "mendos-api"
 main = "worker.js"
 compatibility_date = "2025-01-01"
 

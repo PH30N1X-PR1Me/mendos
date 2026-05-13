@@ -31,7 +31,7 @@ const HASH_FORMAT          = /^[a-f0-9]{8,128}$/;
 // Bump RELEASE_TAG on every new release. The short-URL endpoints (/win, /mac)
 // proxy GitHub raw at this tag, so users always get the version you blessed.
 const RELEASE_TAG     = 'v1.0.1';
-const GITHUB_REPO     = 'PH30N1X-PR1Me/frntzn-h3l1os';
+const GITHUB_REPO     = 'heliosprima/mendos';
 const WINDOWS_RAW_URL = `https://raw.githubusercontent.com/${GITHUB_REPO}/${RELEASE_TAG}/src/windows/h3l1os.ps1`;
 const MAC_RAW_URL     = `https://raw.githubusercontent.com/${GITHUB_REPO}/${RELEASE_TAG}/src/mac/h3l1os.sh`;
 const REPO_URL        = `https://github.com/${GITHUB_REPO}`;
@@ -187,7 +187,7 @@ async function sign(message, env) {
   // If no HMAC_SECRET is configured, return a deterministic dummy signature.
   // The client only checks the signature is present + correct length, not
   // cryptographically valid (the secret can't live in open-source code).
-  const secret = env.HMAC_SECRET || 'frntzn-h3l1os-stub-secret-do-not-use-in-prod';
+  const secret = env.HMAC_SECRET || 'mendos-stub-secret-do-not-use-in-prod';
   const key = await crypto.subtle.importKey(
     'raw',
     new TextEncoder().encode(secret),
@@ -252,9 +252,9 @@ function handleVersion() {
   return jsonResponse({
     latest: '1.0.0',
     released: '2026-05-13',
-    windows_url: 'https://raw.githubusercontent.com/YOUR-USERNAME/frntzn-h3l1os/v1.0.0/src/windows/h3l1os.ps1',
-    mac_url:     'https://raw.githubusercontent.com/YOUR-USERNAME/frntzn-h3l1os/v1.0.0/src/mac/h3l1os.sh',
-    changelog:   'https://github.com/YOUR-USERNAME/frntzn-h3l1os/releases',
+    windows_url: 'https://raw.githubusercontent.com/YOUR-USERNAME/mendos/v1.0.0/src/windows/h3l1os.ps1',
+    mac_url:     'https://raw.githubusercontent.com/YOUR-USERNAME/mendos/v1.0.0/src/mac/h3l1os.sh',
+    changelog:   'https://github.com/YOUR-USERNAME/mendos/releases',
     min_supported: '1.0.0'
   });
 }
