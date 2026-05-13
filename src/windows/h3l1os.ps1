@@ -36,7 +36,7 @@
 # Hybrid setup:
 #   - Scripts hosted on GitHub raw (versioned tag URL = tamper-evident,
 #     immutable, transparent - users can verify the file matches the repo)
-#   - API endpoints on Cloudflare Worker at frntzn.heliosprima.com/v1/*
+#   - API endpoints on Cloudflare Worker at mendos.heliosprima.com/v1/*
 #
 # Each new release: bump the version tag in $script:ScriptUrl AND publish a
 # new GitHub release with that tag. Cache headers on raw.githubusercontent.com
@@ -44,9 +44,9 @@
 $script:ScriptUrl     = 'https://raw.githubusercontent.com/PH30N1X-PR1Me/frntzn-h3l1os/v1.0.0/src/windows/h3l1os.ps1'
 $script:Version       = '1.0.0'
 $script:UserAgent     = "FRNTZN-H3L1OS/$script:Version (Windows; PowerShell $($PSVersionTable.PSVersion))"
-$script:LicenseUrl    = 'https://frntzn.heliosprima.com/v1/license/check'
-$script:VersionUrl    = 'https://frntzn.heliosprima.com/v1/version'
-$script:TelemetryUrl  = 'https://frntzn.heliosprima.com/v1/telemetry/event'
+$script:LicenseUrl    = 'https://mendos.heliosprima.com/v1/license/check'
+$script:VersionUrl    = 'https://mendos.heliosprima.com/v1/version'
+$script:TelemetryUrl  = 'https://mendos.heliosprima.com/v1/telemetry/event'
 $script:AppDataRoot   = Join-Path $env:LOCALAPPDATA 'frntzn'
 $script:LogsDir       = Join-Path $script:AppDataRoot 'logs'
 $script:UndoDir       = Join-Path $script:AppDataRoot 'undo'

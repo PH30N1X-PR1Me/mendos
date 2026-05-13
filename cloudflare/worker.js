@@ -1,7 +1,7 @@
 // ============================================================================
 //  FRNTZN H3L1OS - Cloudflare Worker (hybrid setup)
 //
-//  Hosts on:  frntzn.heliosprima.com
+//  Hosts on:  mendos.heliosprima.com
 //
 //  Endpoints:
 //    GET  /                         -> redirect to GitHub repo

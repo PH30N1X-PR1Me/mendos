@@ -1,7 +1,7 @@
 # ============================================================================
 #  Wrangler config for FRNTZN H3L1OS API Worker
 #
-#  The Worker hosts at  https://frntzn.heliosprima.com/*
+#  The Worker hosts at  https://mendos.heliosprima.com/*
 #  Scripts stay on GitHub raw - this is API-only.
 #
 #  Setup (one time):
@@ -19,9 +19,9 @@ main = "worker.js"
 compatibility_date = "2025-01-01"
 
 # Bind the Worker to the api subdomain.
-# Cloudflare DNS for frntzn.heliosprima.com must exist (proxied/orange-cloud).
+# Cloudflare DNS for mendos.heliosprima.com must exist (proxied/orange-cloud).
 [[routes]]
-pattern = "frntzn.heliosprima.com/*"
+pattern = "mendos.heliosprima.com/*"
 zone_name = "heliosprima.com"
 
 # KV namespaces - create via wrangler then paste ids

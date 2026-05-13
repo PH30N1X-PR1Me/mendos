@@ -21,12 +21,12 @@ __h3l1os_main() {
     # ----- CONSTANTS --------------------------------------------------------
     # Hybrid hosting:
     #   - Script lives on GitHub raw (versioned tag URL)
-    #   - API endpoints on Cloudflare Worker at frntzn.heliosprima.com
+    #   - API endpoints on Cloudflare Worker at mendos.heliosprima.com
     readonly H3L1OS_VERSION="1.0.0"
     readonly H3L1OS_SCRIPT_URL="https://raw.githubusercontent.com/PH30N1X-PR1Me/frntzn-h3l1os/v1.0.0/src/mac/h3l1os.sh"
-    readonly H3L1OS_LICENSE_URL="https://frntzn.heliosprima.com/v1/license/check"
-    readonly H3L1OS_VERSION_URL="https://frntzn.heliosprima.com/v1/version"
-    readonly H3L1OS_TELEMETRY_URL="https://frntzn.heliosprima.com/v1/telemetry/event"
+    readonly H3L1OS_LICENSE_URL="https://mendos.heliosprima.com/v1/license/check"
+    readonly H3L1OS_VERSION_URL="https://mendos.heliosprima.com/v1/version"
+    readonly H3L1OS_TELEMETRY_URL="https://mendos.heliosprima.com/v1/telemetry/event"
     readonly H3L1OS_APPDATA="$HOME/Library/Application Support/FRNTZN"
     readonly H3L1OS_LOGS="$HOME/Library/Logs/FRNTZN"
     readonly H3L1OS_UNDO="$H3L1OS_APPDATA/undo"
