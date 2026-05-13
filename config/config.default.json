@@ -1,0 +1,38 @@
+{
+  "$schema": "https://h3l1os.frntzn.dev/schema/v1.json",
+  "version": "1.0.0",
+  "client": {
+    "id": "default",
+    "name": "FRNTZN H3L1OS",
+    "logoUrl": null,
+    "primaryColor": "#0E639C",
+    "supportContact": null,
+    "ticketSystemUrl": null,
+    "ticketSystemType": null
+  },
+  "environment": {
+    "ssoProvider": null,
+    "ssoUrl": null,
+    "defaultBrowser": "auto",
+    "secondaryBrowser": null,
+    "commsApps": [],
+    "emailClient": "auto",
+    "managedByMdm": false,
+    "mdmProvider": null
+  },
+  "problems": {
+    "include": ["*"],
+    "exclude": [],
+    "custom": []
+  },
+  "compliance": {
+    "phiAware": false,
+    "redactInDiagnosticBundle": [],
+    "telemetry": "disabled"
+  },
+  "ui": {
+    "theme": "dark",
+    "language": "auto",
+    "auditModeDefault": false
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://h3l1os.frntzn.dev/schema/v1.json",
+  "version": "1.0.0",
+  "client": {
+    "id": "remedy-meds",
+    "name": "Remedy Meds IT Support",
+    "primaryColor": "#1ABC9C",
+    "supportContact": "ithelp@remedymeds.example",
+    "ticketSystemUrl": "https://remedymeds.freshservice.com/support/tickets/new",
+    "ticketSystemType": "freshdesk"
+  },
+  "environment": {
+    "ssoProvider": "okta",
+    "ssoUrl": "https://remedymeds.okta.com",
+    "defaultBrowser": "island",
+    "secondaryBrowser": "chrome",
+    "commsApps": ["talkdesk", "slack", "zoom"],
+    "emailClient": "outlook",
+    "managedByMdm": true,
+    "mdmProvider": "intune"
+  },
+  "problems": {
+    "include": ["*"],
+    "exclude": ["network.consumer-router-reset"],
+    "custom": []
+  },
+  "compliance": {
+    "phiAware": true,
+    "redactInDiagnosticBundle": ["patient", "rx", "ssn", "dob", "mrn"],
+    "telemetry": "disabled"
+  },
+  "ui": {
+    "theme": "dark",
+    "language": "en",
+    "auditModeDefault": false
+  }
+}

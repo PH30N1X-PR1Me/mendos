@@ -1,0 +1,39 @@
+# ============================================================================
+#  Wrangler config for FRNTZN H3L1OS API Worker
+#
+#  The Worker hosts at  https://api.heliosprima.com/v1/*
+#  Scripts stay on GitHub raw - this is API-only.
+#
+#  Setup (one time):
+#    1. Replace heliosprima.com with your real domain everywhere in this file
+#    2. wrangler kv:namespace create LICENSES
+#    3. wrangler kv:namespace create TELEMETRY
+#       Paste both returned ids into the kv_namespaces blocks below
+#    4. wrangler secret put HMAC_SECRET
+#       (generate a random 32+ char string; only the Worker needs to know it)
+#    5. wrangler deploy
+# ============================================================================
+
+name = "frntzn-h3l1os-api"
+main = "worker.js"
+compatibility_date = "2025-01-01"
+
+# Bind the Worker to the api subdomain.
+# Cloudflare DNS for api.heliosprima.com must exist (proxied/orange-cloud).
+[[routes]]
+pattern = "api.heliosprima.com/v1/*"
+zone_name = "heliosprima.com"
+
+# KV namespaces - create via wrangler then paste ids
+[[kv_namespaces]]
+binding = "LICENSES"
+id = "REPLACE_WITH_LICENSES_KV_ID"
+
+[[kv_namespaces]]
+binding = "TELEMETRY"
+id = "REPLACE_WITH_TELEMETRY_KV_ID"
+
+# Observability
+[observability]
+enabled = true
+head_sampling_rate = 1
